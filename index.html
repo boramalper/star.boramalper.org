@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Redirecting... — boramalper.org</title>
+</head>
+
+<body>
+	<h1>Redirecting... — boramalper.org</h1>
+    <p>As I have switched my personal website from a subdomain-based structure (<i>e.g.</i> labs.boramalper.org) to a path-based one (<i>e.g.</i> boramalper.org/labs), I will now try to redirect you to the right page.</p>
+    <p>For a given URL such as <tt>*.boramalper.org/...</tt> please visit <tt>boramalper.org/*/...</tt> instead.</p>
+    <p>If you get a 404 Not Found or a similar 4xx error as a result, please let me &lt;bora at boramalper dot org&gt; know.</p>
+    <script>
+        "use strict";
+
+        try {
+            const subdomain = location.host.match(/([a-z]+)\.boramalper\.org/)[1];
+            location.replace("https://www.boramalper.org/" + subdomain + location.pathname);
+        } catch (e) {
+            alert("Automatic redirection failed! Details below:\n\n" + e);
+        }
+    </script>
+    <noscript>
+        <p>Unfortunately, as you have JavaScript disabled, I cannot redirect you automatically.</p>
+    </noscript>
+</body>
+</html>
